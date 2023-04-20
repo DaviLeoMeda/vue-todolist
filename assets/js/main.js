@@ -33,7 +33,7 @@ createApp({
                     done: false
                 })
                 this.error = false
-                inputText = ''
+                this.inputText = ''
             } else {
                 this.error = true
             }

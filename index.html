@@ -45,6 +45,11 @@
                     <i class="fa-regular fa-circle-xmark" @click="deleteIt(index)"></i>
                 </div>
 
+                <div v-if="todos.length == 0"
+                    class="border-bottom p-3 d-flex justify-content-center align-items-center">
+                    <p class="m-0">There aren't any posts here! 🤷‍♂️</p>
+                </div>
+
             </div>
 
         </div>
