@@ -25,19 +25,23 @@ createApp({
         }
     },
     methods: {
-        submitimput() {
+        submitInput() {
 
-            if (inputText != '') {
+            if (this.inputText != '') {
                 this.todos.unshift({
                     text: this.inputText,
                     done: false
                 })
+                this.error = false
                 inputText = ''
             } else {
                 this.error = true
             }
 
 
+        },
+        deleteIt(i) {
+            this.todos.splice(i, 1)
         }
     }
 
