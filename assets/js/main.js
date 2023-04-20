@@ -42,6 +42,14 @@ createApp({
         },
         deleteIt(i) {
             this.todos.splice(i, 1)
+        },
+        strikeIt() {
+
+            if (this.todos.done == true) {
+                this.todos.done = false
+            } else if (this.todos.done == false) {
+                this.todos.done == true
+            }
         }
     }
 

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>ToDo List</title>
 </head>
@@ -27,7 +29,8 @@
             <div class="title text-center mb-4">
                 <h1>To Do List</h1>
 
-                <input type="text" v-model="inputText" @keyup.enter="submitInput" placeholder="Insert your ToDo List">
+                <input type="text" v-model="inputText" :class=" todos.done == true ? 'strikethrough' : ''"
+                    @keyup.enter="submitInput" placeholder="Insert your ToDo List">
                 <button @click="submitInput">Submit it!</button>
                 <p v-if=" error " class="alert alert-danger" role="alert">
                     You got to write something in the input bar, please
@@ -37,7 +40,8 @@
             <div class="bg-light rounded-3">
                 <div v-for="(element, index) in todos" :key="index"
                     class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <p class="m-0">{{ element.text }}</p>
+                    <p @click="strikeIt" :class=" element.done == true ? 'strikethrough' : '' " class="m-0">{{
+                        element.text }}</p>
                     <i class="fa-regular fa-circle-xmark" @click="deleteIt(index)"></i>
                 </div>
 
