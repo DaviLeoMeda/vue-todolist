@@ -47,7 +47,7 @@ createApp({
 
             if (this.todos[i].done == true) {
                 this.todos[i].done = false
-            } else {
+            } else if (this.todos[i].done == false) {
                 this.todos[i].done = true
             }
         }
