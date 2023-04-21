@@ -40,7 +40,7 @@
             <div class="bg-light rounded-3">
                 <div v-for="(element, index) in todos" :key="index"
                     class="border-bottom p-3 d-flex justify-content-between align-items-center">
-                    <p @click="strikeIt" :class=" element.done == true ? 'strikethrough' : '' " class="m-0">{{
+                    <p @click="strikeIt(index)" :class=" element.done == true ? 'strikethrough' : '' " class="m-0">{{
                         element.text }}</p>
                     <i class="fa-regular fa-circle-xmark" @click="deleteIt(index)"></i>
                 </div>

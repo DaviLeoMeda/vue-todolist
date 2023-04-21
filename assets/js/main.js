@@ -43,12 +43,12 @@ createApp({
         deleteIt(i) {
             this.todos.splice(i, 1)
         },
-        strikeIt() {
+        strikeIt(i) {
 
-            if (this.todos.done == true) {
-                this.todos.done = false
-            } else if (this.todos.done == false) {
-                this.todos.done == true
+            if (this.todos[i].done == true) {
+                this.todos[i].done = false
+            } else if (this.todos[i].done == false) {
+                this.todos[i].done == true
             }
         }
     }
